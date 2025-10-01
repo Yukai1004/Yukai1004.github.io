@@ -38,6 +38,7 @@ body {
     }
     .logo{ /* タイトル */
         height: 70px;
+        object-fit: contain;
     }
     .okigaru{
         font-size: 22.5px;
