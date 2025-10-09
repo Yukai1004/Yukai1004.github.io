@@ -1,0 +1,431 @@
+@charset "utf-8";
+
+/* PC・スマホ共通 */
+body {
+    background-color: #fffae6; /* 全体の背景の色 */
+    line-height: 1.5; /* 行の高さ */
+    font-family: sans-serif; /* フォント */
+    color: #453112; /* 文字色 */
+    font-size: 18px;
+}
+.intro-title { /* お気軽そうだん窓口とは？ */
+  font-weight: bold;
+    color: #453112; /* 文字色 */
+}
+.consult-title { /* さっそく相談してみる */
+  font-weight: bold;
+    color: #00bf63; /* 文字色 */
+}
+.center-text {
+    text-align: center; /* 文字中央揃え */
+}
+.tel,
+.phone-link,
+.note {/* 赤文字にするところ */
+    color: #ff5757;
+}
+.bold{
+  font-weight: bold;
+}
+
+/* PC用(768px以上) */
+    header { /* タイトルとHPリンク */
+        display: flex; /* 横並びに */
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px 0; /* 上下の余白のみ */
+        margin: 0 35px 25px;
+    }
+    .logo{ /* タイトル */
+        height: 70px;
+        object-fit: contain;
+    }
+    .ellipse-link { /* HPはこちらのリンク */
+        /*display: flex;*/
+        /*justify-content: flex-end; /* 左右の揃え */
+        /*margin-top: 50px;*/
+        /*margin-right: 150px;*/
+        /*margin-bottom: 50px;*/
+        /*height: 50px;*/
+        padding: 10px 30px;
+        border: 2px solid #453112; /* 太さ2pxの実線 */
+        border-radius: 50px; /*楕円の丸みの数値 */
+        background-color: #fffae6; /*楕円の色 */
+        color: #453112; /*楕円の中の文字色 */
+        text-decoration: none; /*下線を消す */
+        font-family: "Source Sans 3",sans-serif;
+        font-weight: bold; /*文字を太くする */
+        font-size: 17px;
+    }
+    .ellipse-link:hover { /*PCでカーソルを当てた時、色逆にする */
+        background-color: #453112; /* 楕円の色　*/
+        color: #fffae6; /*文字色 */
+    }
+     main h2 { /* お気軽そうだん窓口とは？ */
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    .ika{
+      margin-top: 50px;
+      margin-bottom: 25px;
+    }
+    .box { /*オレンジの枠 */
+        width: 70%; /* 横幅画面の30％の大きさ */
+        max-width: 600px;
+        margin: 30px auto 90px; /* 上下20px、左右を自動調整(中央揃え) */
+        text-align: center; /* 中央配置 */
+        background-color: #fedcbd; /* 背景の色 */
+        padding: 25px 25px;
+        border-radius: 20px; /* オレンジの枠の丸みの数値 */
+        position: relative;
+    }
+    .box p {
+        text-align: left; /* 文字の始まりのラインを揃える */
+        display: inline-block; /* インラインブロック */
+        line-height: 1.8;
+       /* padding: 10px 0; /* 上下のpaddingを揃える */
+    }
+    .box span{
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      height: 100px;
+      width: 100px;
+    }
+    .box span img{
+      width: 100%;
+    }
+    .contact-method-specific  { /*問い合わせ方法の電話でとフォームでのラジオボタン2つ*/
+        display: flex; /*横並び*/
+        justify-content: center;
+        gap: 60px;
+        margin-bottom: 50px;
+    }
+    .contact-method-specific label p{ /*問い合わせ方法の電話でとフォームでの文字2つ*/
+        padding: 10px 30px 10px 50px;
+        border-radius: 40px;
+        border: 2px solid #453112;
+        background-color: #fffae6;
+        color: #453112;
+        transition: all 0.3s;
+        user-select: none;
+        font-family: "Corporate-Logo";
+        font-size: 20px;
+    }
+    .tel_icon{
+        background-image: url(phone_b.svg);
+        background-repeat: no-repeat;
+        background-position: left 20px center;
+        background-size: 25px;
+
+    }
+    .form_icon{
+        background-image: url(table_b.svg);
+        background-repeat: no-repeat;
+        background-position: left 20px center;
+        background-size: 25px;
+    }
+    .contact-method-specific input[type="radio"]:checked +p{ /*電話かフォームを選んだ時*/
+        background-color: #453112;
+        color: #fffae6;
+        border-color: #453112;
+    }
+     .contact-method-specific input[type="radio"]:checked +.tel_icon{
+        background-image: url(phone_w.svg);
+        background-repeat: no-repeat;
+        background-position: left 20px center;
+        background-size: 20px;
+    }
+      .contact-method-specific input[type="radio"]:checked +.form_icon{ 
+        background-image: url(table_w.svg);
+        background-repeat: no-repeat;
+        background-position: left 20px center;
+        background-size: 20px;
+    }
+    .contact-form {/*フォーム全体*/
+        border: 2px solid #453112;
+        border-radius: 20px;
+        padding: 35px;
+        margin: 20px auto 80px;
+        width: 80%;
+        max-width: 800px;
+        background-color: #fffae6;
+        box-sizing: border-box;
+    }
+    .name-form {/* 姓・名ブロックを横並びに */
+        display: flex;
+        gap: 50px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .name-field input, /*セイとメイの入力フォーム */
+    .form-field input, /*電話番号とメールアドレスの入力フォーム */
+    .othermessage { /* その他の追加情報の入力フォーム */
+        width: 100%; 
+        margin-top: 12px;
+        margin-bottom: 30px;
+        padding: 15px;
+        font-size: 16px;
+        border: 2px solid #453112; /*太さ2pxの実線*/
+        border-radius: 8px; /*線の丸み*/
+        box-sizing: border-box; /*レイアウト調整*/
+        background-color: #ffffff;
+    }
+    .contact-method-buttons{
+      display: flex;
+      margin-bottom: 30px;
+    }
+   .contact-option{
+        flex-basis: 50%;
+        margin-top: 12px;
+        margin-left: 15px;
+        font-size: 16px;
+   }
+   .radioCheck{
+        margin-left: 5px;
+   }
+   .note{
+    margin: -20px 0 30px 10px;
+   }
+   .consultation{
+    font-weight: bold;
+    margin-bottom: 30px;
+   }
+    .consultation-row { /*チェックボックス2×2つ*/
+        display: flex; 
+        margin-top: 12px;
+    }
+    .consultation-label{
+      font-size: 16px;
+      margin-left: 15px;
+      flex-basis: 50%;
+    }
+    .consultation-label input{
+      margin-right: 10px;
+    }
+    .othermessage {/*その他追加情報の入力フォーム*/
+        height: 130px; /*入力フォームの高さ*/
+        resize: vertical; /*入力する枠を縦に広げられる(文字数制限なし)*/
+        margin-top: 10px;
+        width: 100%;
+        max-width: 800px; 
+    }
+    .kojin{
+        font-size: 13px;
+        text-align: center;
+    }
+    .tel { /*問い合わせ方法で電話を選んだ時に出るtelの文字*/
+        font-size: 40px;
+        font-weight: bold;
+        font-family: "Source Sans 3",sans-serif;
+    }
+    .phone-link {
+        text-decoration: none;
+        font-weight: bold;
+        font-family: "Source Sans 3",sans-serif;
+    }
+    .contact-phone a.phone-link:hover {
+        text-decoration: underline;
+    }
+    .contact-phone { /*問い合わせ方法で電話を選んだ時に出る文*/
+        background-color: #ffffff;
+        border: 2px solid #453112;
+        border-radius: 20px;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 800px;
+        text-align: center;
+        padding:40px;  
+        margin-bottom: 80px;
+    }
+    .submit{
+      margin: 45px auto;
+      text-align: center;
+      display: block;
+      width: 80%;
+      background-color:#453112;
+      color: #fffae6 ;
+      font-size: 20px;
+      padding: 20px;
+      border-radius: 40px;
+    }
+    footer {
+      background-color: #00bf63;
+      color: #fffef8;
+      padding: 25px;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .address {
+      flex-basis: 50%;
+      margin-left: 20px;
+    }
+    .address h3 {
+      margin-bottom: 10px;
+    }
+    .address h3 img{
+      height: 25px;
+    }
+    .address p{
+      font-size: 16px;
+    }
+    .map {
+      flex-basis: 50%;
+    }
+    .map iframe {
+      width: 100%;
+      height: 150px;
+      border: 0;
+    }
+    .footer-tel {
+      margin-top: 10px;
+    }
+/*PCレイアウトここまで*/
+
+/* -----------------------------
+   レスポンシブ
+----------------------------- */
+@media screen and (max-width: 600px) {
+  body{
+    font-size: 12px;
+  }
+  header {
+    padding: 20px 0;
+    margin: 0 20px;
+  }
+  .logo{ /* タイトル */
+        height: 40px;
+  }
+  .ellipse-link { /* HPはこちらのリンク */
+        padding: 20px;
+        font-size: 12px;
+  }
+  main h2 {
+        font-size: 16px;
+        margin-bottom: 30px;
+  }
+  .ika{
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  .box { 
+        width: 90%; 
+        margin: 25px auto 35px; 
+        padding: 20px;
+  }
+  .box span{
+      top: -20px;
+      right: -20px;
+      height: 60px;
+      width: 60px;
+    }
+  .consult-title{
+        font-size: 18px;
+        margin-bottom: 25px;
+  }
+  .contact-method-specific  { 
+        gap: 25px;
+        margin-bottom: 25px;
+  }
+  .contact-method-specific label p{ /*問い合わせ方法の電話でとフォームでの文字2つ*/
+        font-size: 18px;
+    }
+  .contact-form {
+        font-size: 12px;
+        padding: 20px;
+        width: 90%;
+  }
+  .name-form {
+        gap: 25px;
+  }
+  .name-field input,
+  .form-field input, 
+  .othermessage {
+        font-size: 11px;
+        width: 100%; 
+        margin-top: 8px;
+        margin-bottom: 20px;
+        padding: 14px;
+  }
+  .contact-option{
+        font-size: 11px;
+  }
+  .consultation-label{
+      font-size: 11px;
+  }
+  .othermessage {
+        height: 75px;
+  }
+  .kojin{
+        font-size: 8px;
+  }
+  .sp-br {
+        display: block;
+  }
+  .submit{
+      margin: 20px auto;
+      padding: 12px;
+  }
+  .contact-phone { 
+        width: 90%;
+        padding:20px;  
+        margin-bottom: 80px;
+  }
+  .tel { 
+        font-size: 20px;
+  }
+  .phone-link {
+        font-size: 20px;
+    }
+  footer {
+      padding: 20px;
+  }
+  .address {
+      flex-basis: 60%;
+      margin-left:0;
+  }
+  .address h3 {
+      margin-bottom: 5px;
+  }
+  .address h3 img{
+      height: 15px
+  }
+  .address p{
+      font-size: 7px;
+  }
+  .map {
+      flex-basis: 40%;
+  }
+  .map iframe {
+      height: 80px;
+  }
+  .footer-tel {
+      margin-top: 0;
+  }
+}
+/*バッジを揺らすアニメーション*/
+.badge{
+  transform-origin: center;
+  animation: yurayura 2s linear infinite;
+}
+
+@keyframes yurayura {
+0% , 100%{
+    transform: rotate(10deg);
+}
+50%{
+    transform: rotate(-10deg);
+}
+}
+
+/*コーポレート・ロゴフォント*/
+@font-face { 
+  /* ① ここにfont-familyで指定したい名前を書く*/
+  font-family: "Corporate-Logo"; 
+
+  /* フォントが置かれているパスを書く */ 
+  src: url("Corporate-Logo-Medium-ver3.otf") format("OpenType");
+ }
