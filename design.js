@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneSection = document.querySelector('.contact-phone');
   const formSection = document.querySelector('.contact-form');
 
-  const phonePref = document.querySelector('input[name="contact_preference"][value="電話"]');
-  const mailPref = document.querySelector('input[name="contact_preference"][value="メール"]');
+  const phonePref = document.querySelector('input[name="ご希望の連絡方法"][value="電話"]');
+  const mailPref = document.querySelector('input[name="ご希望の連絡方法"][value="メール"]');
   const phoneNote = document.querySelector('.note');
 
   // --- 共通: 表示/非表示ユーティリティ ---
@@ -61,4 +61,5 @@ function checkForm(){
        window.alert("無効なメールアドレスです");
        return false;
       }
+
 };
